@@ -153,6 +153,7 @@ public class IFrameExamples {
 
         for(WebElement link : footerLinks)
         {
+            link.click();
             System.out.println(link.getText());
         }
     }
