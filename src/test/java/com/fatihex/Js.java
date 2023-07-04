@@ -55,7 +55,6 @@ public class Js {
 
         String num = text.split(":")[1].trim();
         Assert.assertEquals(Integer.parseInt(num),sum);
-
     }
 
     @Test
