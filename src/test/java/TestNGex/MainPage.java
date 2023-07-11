@@ -1,8 +1,6 @@
 package TestNGex;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class MainPage {
 
@@ -20,7 +18,33 @@ public class MainPage {
         System.out.println("Suite sona erdi.");
     }
 
-    @Test(priority = 2)
+    @BeforeClass
+    public void beforeClass()
+    {
+        System.out.println("MainPage Class başlatıldı");
+    }
+
+    @AfterClass
+    public void afterClass()
+    {
+        System.out.println("MainPage Class çalıştı.");
+        System.out.println("MainPage Class sonlandırıldı.");
+
+    }
+
+
+    @BeforeMethod
+    public void beforeMethod()
+    {
+        System.out.println("Before Method -------- Main Page ---------- de çalıştı.");
+    }
+
+    @BeforeMethod
+    public void AfterMethod()
+    {
+        System.out.println("After Method -------- Main Page ---------- de sonlandı.");
+    }
+    @Test(groups = {"Monkey"})
     public void aTest()
     {
         System.out.println("a Test çalıştırıldı");

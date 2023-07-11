@@ -1,15 +1,20 @@
 package TestNGex;
 
-import org.junit.Assert;
+
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
 public class LoginPage {
 
-    @Test
-    public void webLoginPagePositive()
+    @Parameters({"URL", "browser"})
+    @Test (groups = {"Monkey"})
+    public void webLoginPagePositive(String link,String browser)
     {
         System.out.println("Web Login Page Positive Test");
+        System.out.println("Website : " + link);
+        System.out.println("Browser name : " + browser);
+
     }
 
     @Test
@@ -24,7 +29,7 @@ public class LoginPage {
         System.out.println("Web Login Page Negative 2 Test");
     }
 
-    @Test
+    @Test (groups = {"Monkey"})
     public void webLoginPageNegative3()
     {
         System.out.println("Web Login Page Negative 3 Test");
